@@ -1,0 +1,7 @@
+{
+    "server":"localhost",
+    "user": "root",
+    "password": "",
+    "dbname": "PFC",
+    "driver": "pdo_mysql"
+}

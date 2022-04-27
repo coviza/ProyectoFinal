@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+
+<form action="/profile" method="post"> 
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+        <div class="container">
+        <div class="col-md-4">
+            <label class="form-label" for="form2Example1">Nombre</label>
+      <input type="text" name="nombre" id="form2Example1" class="form-control" />
+      
+    </div>
+</div>
+</div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <div class="container">
+        <div class="col-md-4">
+            <label class="form-label" for="form2Example2">Cliente Cod</label>
+      <input type="password" name="cliente_cod" id="form2Example2" class="form-control" />
+      
+    </div>
+</div>
+</div>
+  
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input class="form-check-input bg-warning" type="checkbox" value="" id="form2Example34" checked />
+          <label class="form-check-label" for="form2Example34"> Remember me </label>
+        </div>
+      </div>
+  
+      <div class="col-md-8">
+        <!-- Simple link -->
+        <a href="#!" class="text-warning">Forgot password?</a>
+      </div>
+    </div>
+  
+    <!-- Submit button -->
+    <div class="container">
+        <div class="col-md-4">
+    <button type="submit" class="btn btn-warning btn-block mb-4">Login</button>
+  </div>
+  </div>
+    
+
+{% endblock %}
+
+{% block footer %}
+
+<!-- Register buttons -->
+
+<footer class="footer">
+<div class="text-center">
+  <p>Not a member? <a href="http://localhost:8000/" class="text-warning">Register</a></p>
+  <p>or sign up with:</p>
+  
+  <button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-facebook-f"></i>
+  </button>
+  
+  <button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-google"></i>
+  </button>
+
+  <button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-twitter"></i>
+  </button>
+
+  <button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-github"></i>
+  </button>
+</div>
+</form>
+</footer>
+{% endblock %}

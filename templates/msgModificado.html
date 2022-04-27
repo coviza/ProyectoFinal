@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Enhorabuena, has modificado el pedido exitosamente!</h1>
+<br>
+<a href="/edit/{{datos.getPedidoNum}}">Volver a la edicion</a>
+<a href="/profile">Volver al perfil</a>
+
+{% endblock %}
+
+{% block footer %}
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">&copy; Pablo_Coviza</span>
+      </div>
+    </footer>
+
+{% endblock %}

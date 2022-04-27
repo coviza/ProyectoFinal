@@ -1,0 +1,30 @@
+{
+"/": {
+    "controller": "DashBoardController",
+    "action": "dashBoard"
+},
+"/logout": {
+    "controller": "LoginController",
+    "action": "logout"
+},
+"/profile": {
+    "controller": "LoginController",
+    "action": "loginAttempt"
+},
+"/insert": {
+    "controller": "InsertController",
+    "action": "insertPedidos"
+},
+"/edit": {
+    "controller": "EditController",
+    "action": "editPedidos"
+},
+"/update": {
+    "controller": "EditController",
+    "action": "updatePedidos"
+},
+"/delete": {
+    "controller": "EditController",
+    "action": "deletePedidos"
+}
+}
