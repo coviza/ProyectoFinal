@@ -2,14 +2,14 @@
 
 {% block body %}
 
-<div class="conatainer">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
-            <p>profile del cliente: con sesion: {{ session }} <br> 
-              profile del cliente con logeo: {{ resultados.getNombre() }}</p>
-            <a href="/logout" class="text-warning">Log Out</a>
+            <h2>Bienvenido: {{ session }}</h2>
+              <!-- profile del cliente con logeo: {{ resultados.getNombre() }}</p> -->
+            <a href="/logout" class="text-warning">Log Out</a> 
             <!-- La relacion que existe entre Cliente y Empleado es ManyToOne(Solo obtengo un objeto) -->
-            <p>Los apellidos del empleado son: {{ resultados.getEmp().getApellidos() }}</p>
+            <p>El empleado asociado con esta empresa es: {{ resultados.getEmp().getApellidos() }}</p>
             <!--               ----------  MENU DESPLEGABLE PARA MOSTRAR DATOS -------------
             <select name="desplegable" id="">
                 <option>{{ resultados.getPedido()[0].getPedidoNum() }}</option>

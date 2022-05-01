@@ -169,7 +169,6 @@ class Pedido
     public function setCliente($cliente)
     {
         $this->cliente = $cliente;
-
         return $this;
     }
 
