@@ -20,18 +20,20 @@ class LoginController extends AbstractController
          $username = $_SESSION['nombre'];
          $clienteCod = $_SESSION['cliente_cod'];
       }
+
       $entityManager = (new EntityManager())->get();
       $clienteRepository = $entityManager->getRepository(Cliente::class);
       $cliente = $clienteRepository->findOneBy(['nombre' => $username, 'clienteCod' => $clienteCod]);
       //$cliente->mayusculas(); hariamos uso de un metodo declarado en la entidad Cliente
       /* -El primer parametro corresponde a la variable de la entidad LITERALMENTE definido en la Entidad pero sin el $
-            -El parametro se llama igual que la variable definida en la Entidad, NO COMO EL NAME DE LA BBDD */
+         -El parametro se llama igual que la variable definida en la Entidad, NO COMO EL NAME DE LA BBDD */
       // var_dump($cliente->getEmp());
       if (!isset($_SESSION['nombre'])) { //Si no existe la session, creo la session   
          // $_SESSION['idAgent'] = $agent->getIdAgent();
          $_SESSION['nombre'] = $cliente->getNombre();
          $_SESSION['cliente_cod'] = $clienteCod;
       }
+
       //  var_dump($_SESSION);
       // var_dump($cliente->getPedido()[0]->getPedidoNum());
       $this->render('profile.html', [

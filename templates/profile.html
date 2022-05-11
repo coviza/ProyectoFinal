@@ -2,12 +2,35 @@
 
 {% block body %}
 
+<nav class="navbar navbar-expand-lg navbar-light bg-warning static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="/images/gateway.png" alt="..." height="36" >
+    </a>
+    <h1 style="text-align: center;">Coviza Gateway</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.rnbcosmeticos.com/">Partner</a>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
             <h2>Bienvenido: {{ session }}</h2>
               <!-- profile del cliente con logeo: {{ resultados.getNombre() }}</p> -->
-            <a href="/logout" class="text-warning">Log Out</a> 
+              <a href="/logout" class="btn btn-warning">Log Out</a> 
             <!-- La relacion que existe entre Cliente y Empleado es ManyToOne(Solo obtengo un objeto) -->
             <p>El empleado asociado con esta empresa es: {{ resultados.getEmp().getApellidos() }}</p>
             <!--               ----------  MENU DESPLEGABLE PARA MOSTRAR DATOS -------------
@@ -88,12 +111,12 @@
       <input name="total" type="text" class="form-control" id="" placeholder="Total">
     </div>
   </div>
-  <button type="submit" class="bg-warning">Insertar nuevo pedido</button>
+  <button type="submit" class="btn bg-warning">Insertar nuevo pedido</button>
 </form>
 
 
 <br>
-<a href="/" class="text-warning">Volver</a>
+<a href="/" class="btn btn-warning">Volver</a>
 
 
 {% endblock %}

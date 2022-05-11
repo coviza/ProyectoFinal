@@ -26,5 +26,25 @@
 "/delete": {
     "controller": "EditController",
     "action": "deletePedidos"
+},
+"/productos": {
+    "controller": "ProductosController",
+    "action": "showProductos"
+},
+"/pedidos": {
+    "controller": "PedidosController",
+    "action": "showPedidos"
+},
+"/empleados": {
+    "controller": "EmpleadosController",
+    "action": "showEmpleados"
+},
+"/clientes": {
+    "controller": "ClientesController",
+    "action": "showClientes"
+},
+"/detalle": {
+    "controller": "DetallesController",
+    "action": "showDetalles"
 }
 }

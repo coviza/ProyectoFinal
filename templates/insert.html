@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<form action="/insert" method="post">
+    <div class="form-group row">
+      <label name="num" class="col-sm-2 col-form-label-sm">Numero de Pedido</label>
+      <div class="col-sm-10">
+        <input name="num" type="text" class="form-control" id="" placeholder="Numero de Pedido">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label name="cod" class="col-sm-2 col-form-label-sm">Codigo del Cliente</label>
+      <div class="col-sm-10">
+        <input name="cod" type="text" class="form-control" id="" placeholder="Codigo del Cliente">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label name="tipo" class="col-sm-2 col-form-label-sm">Tipo de Pedido</label>
+      <div class="col-sm-10">
+        <input name="tipo" type="text" class="form-control" id="" placeholder="Tipo de Pedido">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label name="total" class="col-sm-2 col-form-label-sm">Total</label>
+      <div class="col-sm-10">
+        <input name="total" type="text" class="form-control" id="" placeholder="Total">
+      </div>
+    </div>
+    <button type="submit" class="bg-warning">Insertar nuevo pedido</button>
+  </form>
+  
+  
+  <br>
+  <a href="/" class="text-warning">Volver</a>
+
+
+{% endblock %}
+
+{% block footer %}
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">&copy; Pablo_Coviza</span>
+      </div>
+    </footer>
+
+{% endblock %}
