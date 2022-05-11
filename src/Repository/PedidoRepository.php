@@ -40,15 +40,27 @@ class PedidoRepository extends EntityRepository
     public function update($pedido, $cliente, $numeroPedido, $pedidoTipo, $total)
     {
         // echo 'hola';
-
         // var_dump($pedido);
 
         // Modifico el pedido que ya existe en bbdd
-        $pedido
-            ->setCliente($cliente)
-            ->setPedidoNum($numeroPedido)
-            ->setPedidoTipo($pedidoTipo)
-            ->setTotal($total);
+        $pedido->setCliente($cliente);
+        $pedido->setPedidoNum($numeroPedido);
+        $tipoa = "A";
+        $tipob = "B";
+        $tipoc = "C";
+        //checkeo que el tipo de pedido sea estrictamente A B o C y lo persisto en la bbdd, si no saldra un error en la pantalla 
+        if($pedidoTipo !== $tipoa && $pedidoTipo !== $tipob && $pedidoTipo !== $tipoc) {
+            echo "<p class='text-danger'>" . 'Solamente se admiten pedidos de tipo "A", "B" o "C"' . "</p>";
+        }else {
+            $pedido->setPedidoTipo($pedidoTipo);
+        };
+        //checkeo que no se exceda la cantidad maxima permitida
+        if($total > 999999.99) {
+            echo "<p class='text-danger'>" . 'La cantidad maxima total es de 999999.99' . "</p>";
+        }else {
+            $pedido->setTotal($total);
+        }
+        
 
 
         $this->getEntityManager()->persist($pedido);
