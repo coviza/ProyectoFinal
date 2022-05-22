@@ -5,14 +5,19 @@ namespace App\Controllers;
 use App\Core\AbstractController;
 use App\Core\EntityManager;
 use App\Entity\Cliente;
+use App\Entity\Detalle;
 use Doctrine\ORM\Mapping\Entity;
 use App\Repository\ClienteRepository;
-
+use App\Repository\DetalleRepository;
 
 class LoginController extends AbstractController
 {
    public function loginAttempt()
    {
+      /* if(!isset($_SESSION['nombre'])) {
+         echo "You are not registered to our app. We are sorry :(";
+      } */
+
       if (isset($_POST['nombre'])) { //Si existe $_POST le asigno el name y el password introducidos por formulario
          $username = $_POST['nombre'];
          $clienteCod = $_POST['cliente_cod'];
@@ -24,6 +29,9 @@ class LoginController extends AbstractController
       $entityManager = (new EntityManager())->get();
       $clienteRepository = $entityManager->getRepository(Cliente::class);
       $cliente = $clienteRepository->findOneBy(['nombre' => $username, 'clienteCod' => $clienteCod]);
+
+      $detalleRepository = $entityManager->getRepository(Detalle::class);
+      $detalle = $detalleRepository->findAll(); 
       //$cliente->mayusculas(); hariamos uso de un metodo declarado en la entidad Cliente
       /* -El primer parametro corresponde a la variable de la entidad LITERALMENTE definido en la Entidad pero sin el $
          -El parametro se llama igual que la variable definida en la Entidad, NO COMO EL NAME DE LA BBDD */
@@ -33,12 +41,12 @@ class LoginController extends AbstractController
          $_SESSION['nombre'] = $cliente->getNombre();
          $_SESSION['cliente_cod'] = $clienteCod;
       }
-
       //  var_dump($_SESSION);
       // var_dump($cliente->getPedido()[0]->getPedidoNum());
       $this->render('profile.html', [
          "resultados" => $cliente,
-         "session" => $_SESSION["nombre"]
+         "session" => $_SESSION["nombre"],
+         "detalles" => $detalle
       ]);
    }
    /**
