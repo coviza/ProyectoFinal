@@ -6,9 +6,10 @@ use App\Core\AbstractController;
 use App\Core\EntityManager;
 use App\Entity\Pedido;
 use App\Entity\Cliente;
+use App\Entity\Detalle;
 use Doctrine\ORM\Mapping\Entity;
 use App\Repository\PedidoRepository;
-
+use App\Repository\DetalleRepository;
 use Doctrine\Common\Util\Debug;
 
 /**
@@ -33,6 +34,17 @@ class EditController extends AbstractController
 
         $this->render('update.html', [
             "info" => $pedido
+        ]);
+    }
+
+    public function showPedidos()
+    {
+        $entityManager = (new EntityManager())->get();                            //1
+        $detalleRepository = $entityManager->getRepository(Detalle::class);       //2
+        $detalle = $detalleRepository->findAll();                         //3
+
+        $this->render('showDetalle.html', [
+            "info" => $detalle
         ]);
     }
 

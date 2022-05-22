@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-warning static-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/profile">
       <img src="/images/gateway.png" alt="..." height="36" >
     </a>
     <h1 style="text-align: center;">Coviza Gateway</h1>
@@ -70,7 +70,7 @@
                         <!-- {% for data in resultados.getPedido().getDetalle() %}
                         <td scope="row">{{ data.getDetalleNum() }}</td>
                         {% endfor %} -->
-                        <td scope="row">{{ datos.getDetalle()[0].getDetalleNum() }} </td>
+                        <td scope="row"><a href="/showDetalle/{{datos.getDetalle()[0].getCantidad()}}">{{ datos.getDetalle()[0].getCantidad() }}</a></td>
                         <td scope="row">{{ datos.getPedidoTipo() }}</td>
                         <td scope="row">{{ datos.getCliente().getClienteCod() }}</td>
                         <!-- accedo a traves de la relacion entre pedido y cliente para obtener el codigo de cliente -->
