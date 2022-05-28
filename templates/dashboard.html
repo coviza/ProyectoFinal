@@ -2,6 +2,7 @@
 
 
 {% block body %}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-warning static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -21,15 +22,15 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Details
+            Catálogo
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/productos">Lista de Productos</a></li>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">  
             <li><a class="dropdown-item" href="/pedidos">Lista de Pedidos</a></li>
+            <li><a class="dropdown-item" href="/empleados">Lista de Empleados</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="/empleados">Lista de Empleados</a></li>
+            <li><a class="dropdown-item" href="/productos">Lista de Productos</a></li>
           </ul>
         </li>
       </ul>
@@ -66,13 +67,13 @@
         <!-- Checkbox -->
         <div class="form-check">
           <input class="form-check-input bg-warning" type="checkbox" value="" id="form2Example34" checked />
-          <label class="form-check-label" for="form2Example34"> Remember me </label>
+          <label class="form-check-label" for="form2Example34">Recuerdame</label>
         </div>
       </div>
   
       <div class="col-md-8">
         <!-- Simple link -->
-        <a href="#!" class="text-warning">Forgot password?</a>
+        <a href="/" class="text-warning">Olvidaste la contraseña?</a>
       </div>
     </div>
   
@@ -92,24 +93,20 @@
 
 <footer class="footer">
 <div class="text-center">
-  <p>Not a member? <a href="http://localhost:8000/" class="text-warning">Register</a></p>
-  <p>or sign up with:</p>
+  <p>Todavía no eres miembro? <a href="/" class="text-warning">Registrese</a></p>
+  <p>o logéate con cualquiera de las RRSS:</p>
   
-  <button type="button" class="btn btn-warning btn-floating mx-1">
-    <i class="fab fa-facebook-f"></i>
-  </button>
+  <a href="https://es-es.facebook.com/"><button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-facebook-f"></i></button></a>
   
-  <button type="button" class="btn btn-warning btn-floating mx-1">
-    <i class="fab fa-google"></i>
-  </button>
+  <a href="https://www.google.es/"><button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-google"></i></button></a>
 
-  <button type="button" class="btn btn-warning btn-floating mx-1">
-    <i class="fab fa-twitter"></i>
-  </button>
+  <a href="https://twitter.com/"><button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-twitter"></i></button></a>
 
-  <button type="button" class="btn btn-warning btn-floating mx-1">
-    <i class="fab fa-github"></i>
-  </button>
+  <a href="https://github.com/"><button type="button" class="btn btn-warning btn-floating mx-1">
+    <i class="fab fa-github"></i></button></a>
 </div>
 </form>
 </footer>

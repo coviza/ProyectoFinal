@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-warning static-top">
   <div class="container">
-    <a class="navbar-brand" href="/profile">
+    <a class="navbar-brand" href="/">
       <img src="/images/gateway.png" alt="..." height="36" >
     </a>
     <h1 style="text-align: center;">Coviza Gateway</h1>
@@ -50,12 +50,13 @@
                 <caption>Lista de pedidos</caption>
                 <thead>
                     <tr>
-                        <th scope="col">Numero Pedido</th>
+                        <th scope="col">Número Pedido</th>
                         <th scope="col">Fecha Pedido</th>
                         <th scope="col">Cantidad Productos</th>
+                        <th scope="col">Precio Venta</th>
                         <th scope="col">Tipo</th>
-                        <th scope="col">Cliente Codigo</th>
-                        <th scope="col">Fecha Envio</th>
+                        <th scope="col">Código Cliente</th>
+                        <th scope="col">Fecha Envío</th>
                         <th scope="col">Total</th>
                         <th scope="col"></th>
                     </tr>
@@ -70,7 +71,9 @@
                         <!-- {% for data in resultados.getPedido().getDetalle() %}
                         <td scope="row">{{ data.getDetalleNum() }}</td>
                         {% endfor %} -->
-                        <td scope="row"><a href="/showDetalle/{{datos.getDetalle()[0].getCantidad()}}">{{ datos.getDetalle()[0].getCantidad() }}</a></td>
+                        <td scope="row">{{ datos.getDetalle()[0].getCantidad() }}</a></td>
+                        <!-- <td scope="row"><a href="/showDetalle/{{datos.getDetalle()[0].getCantidad()}}">{{ datos.getDetalle()[0].getCantidad() }}</a></td> -->
+                        <td scope="row">{{ datos.getDetalle()[0].getPrecioVenta() }}</a></td>
                         <td scope="row">{{ datos.getPedidoTipo() }}</td>
                         <td scope="row">{{ datos.getCliente().getClienteCod() }}</td>
                         <!-- accedo a traves de la relacion entre pedido y cliente para obtener el codigo de cliente -->
@@ -97,38 +100,50 @@
         </div>
     </div>
 </div>
-<br>
-<!-- La relacion que existe entre Cliente y Empleado es ManyToOne(Solo obtengo un objeto) -->
-<h5>Cualquier duda, consulte con el empleado asignado a su empresa: {{ resultados.getEmp().getNombre()}} {{resultados.getEmp().getApellidos()}}, con la extensión: {{resultados.getEmp().getEmpNo()}}</h5>
-<br>
+<br><br>
+
 <form action="/insert" method="post">
   <div class="form-group row">
-    <label name="num" class="col-sm-2 col-form-label-sm">Numero de Pedido</label>
-    <div class="col-sm-10">
-      <input name="num" type="text" class="form-control" id="" placeholder="Numero de Pedido">
+    <label name="num" class="col-sm-2 col-form-label-sm">Número de Pedido</label>
+    <div class="col-sm-5">
+      <input name="num" type="text" class="form-control" id="" placeholder="Número de Pedido">
     </div>
   </div>
   <div class="form-group row">
-    <label name="cod" class="col-sm-2 col-form-label-sm">Codigo del Cliente</label>
-    <div class="col-sm-10">
-      <input name="cod" type="text" class="form-control" id="" placeholder="Codigo del Cliente">
+    <label name="cod" class="col-sm-2 col-form-label-sm">Código del Cliente</label>
+    <div class="col-sm-5">
+      <input name="cod" type="text" class="form-control" id="" placeholder="Código del Cliente">
     </div>
   </div>
   <div class="form-group row">
     <label name="tipo" class="col-sm-2 col-form-label-sm">Tipo de Pedido</label>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <input name="tipo" type="text" class="form-control" id="" placeholder="Tipo de Pedido">
     </div>
   </div>
   <div class="form-group row">
+    <label name="num" class="col-sm-2 col-form-label-sm">Cantidad de productos</label>
+    <div class="col-sm-5">
+      <input name="cnt" type="text" class="form-control" id="" placeholder="Cantidad de productos">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label name="num" class="col-sm-2 col-form-label-sm">Precio de Venta</label>
+    <div class="col-sm-5">
+      <input name="pev" type="text" class="form-control" id="" placeholder="Precio de Venta">
+    </div>
+  </div>
+  <div class="form-group row">
     <label name="total" class="col-sm-2 col-form-label-sm">Total</label>
-    <div class="col-sm-10">
+    <div class="col-sm-5">
       <input name="total" type="text" class="form-control" id="" placeholder="Total">
     </div>
   </div>
   <button type="submit" class="btn bg-warning">Insertar nuevo pedido</button>
 </form>
+<br><br>
 
+<h5>Cualquier duda, consulte con el empleado asignado a su empresa: {{ resultados.getEmp().getNombre()}} {{resultados.getEmp().getApellidos()}}, con la extensión: {{resultados.getEmp().getEmpNo()}}</h5>
 
 <br>
 <a href="/" class="btn btn-warning">Volver</a>
