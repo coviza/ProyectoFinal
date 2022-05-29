@@ -8,6 +8,6 @@ class DashBoardController extends AbstractController
 {
    public function dashBoard()
    {
-      $this->render("dashboard.html", []);
+      $this->render("dashboard.html.twig", []);
    }
 }

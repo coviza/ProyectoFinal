@@ -21,7 +21,7 @@ class ProductosController extends AbstractController
         Debug::dump($productos[0]->getProdNum());
         die(); */
 
-        $this->render("productos.html", [
+        $this->render("productos.html.twig", [
             "resultados" => $productos
         ]);
     }

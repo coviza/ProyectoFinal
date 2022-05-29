@@ -32,7 +32,7 @@ class EditController extends AbstractController
         $pedidoRepository = $entityManager->getRepository(Pedido::class);         //2
         $pedido = $pedidoRepository->find($numPedido);                            //3
 
-        $this->render('update.html', [
+        $this->render('update.html.twig', [
             "info" => $pedido
         ]);
     }
@@ -43,7 +43,7 @@ class EditController extends AbstractController
         $detalleRepository = $entityManager->getRepository(Detalle::class);       //2
         $detalle = $detalleRepository->findAll();                         //3
 
-        $this->render('showDetalle.html', [
+        $this->render('showDetalle.html.twig', [
             "info" => $detalle
         ]);
     }
@@ -80,7 +80,7 @@ class EditController extends AbstractController
         //Almaceno el pedido actualizado en la variable $pedidoActualizado
         $pedidoActualizado = $pedidoRepository->find($_POST['num']);
         //Muestro el pedido actualizado
-        $this->render('update.html', [
+        $this->render('update.html.twig', [
             "info" => $pedidoActualizado
         ]);
     }
@@ -102,7 +102,7 @@ class EditController extends AbstractController
         $pedido = $pedidoRepository->find($numPedido); //$numPedido equivale lo que le concateno al template en la ruta                         //3
         $pedido = $pedidoRepository->delete($pedido);                           //4
 
-        $this->render('msgBorrado.html', []);                                   //5
+        $this->render('msgBorrado.html.twig', []);                                   //5
         // header('location:/profile');                                         //5.b
     }
 }

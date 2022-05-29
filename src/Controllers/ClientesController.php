@@ -21,7 +21,7 @@ class ClientesController extends AbstractController
         Debug::dump($clientes);
         die(); */
 
-        $this->render("clientes.html", [
+        $this->render("clientes.html.twig", [
             "resultados" => $clientes
         ]);
     }

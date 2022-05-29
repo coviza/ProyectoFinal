@@ -43,7 +43,7 @@ class LoginController extends AbstractController
       }
       //  var_dump($_SESSION);
       // var_dump($cliente->getPedido()[0]->getPedidoNum());
-      $this->render('profile.html', [
+      $this->render('profile.html.twig', [
          "resultados" => $cliente,
          "session" => $_SESSION["nombre"],
          "detalles" => $detalle

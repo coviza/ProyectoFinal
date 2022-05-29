@@ -21,7 +21,7 @@ class DetallesController extends AbstractController
         Debug::dump($detalles);
         die(); */
 
-        $this->render("detalles.html", [
+        $this->render("detalles.html.twig", [
             "resultados" => $detalles
         ]);
     }

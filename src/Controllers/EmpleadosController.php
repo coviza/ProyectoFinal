@@ -21,7 +21,7 @@ class EmpleadosController extends AbstractController
         Debug::dump($empleados);
         die(); */
 
-        $this->render("empleados.html", [
+        $this->render("empleados.html.twig", [
             "resultados" => $empleados
         ]);
     }

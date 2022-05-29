@@ -21,7 +21,7 @@ class PedidosController extends AbstractController
         Debug::dump($pedidos[0]->getDetalle()->getPedidoNum());
         die(); */
 
-        $this->render("pedidos.html", [
+        $this->render("pedidos.html.twig", [
             "resultados" => $pedidos
         ]);
     }

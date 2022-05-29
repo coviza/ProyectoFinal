@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html.twig" %}
 
 
 {% block body %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-warning static-top">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/empleados">
       <img src="/images/gateway.png" alt="..." height="36" >
     </a>
     <h1 style="text-align: center;">Coviza Gateway</h1>
@@ -37,27 +37,42 @@
     </div>
   </div>
 </nav>
-
+  
     <table class="table table-warning table-striped table-hover table-bordered" style="width:100%">
         <thead>
-            <caption>Lista de Productos</caption>
+            <caption>Lista de Clientes</caption>
             <tr>
-                <th scope="col">PROD_NUM</th>
-                <th scope="col">DESCRIPCION</th>
+                <th scope="col">Cliente Cod</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">DIREC</th>
+                <th scope="col">CIUDAD</th>
+                <th scope="col">ESTADO</th>
+                <th scope="col">COD_POSTAL</th>
+                <th scope="col">AREA</th>
+                <th scope="col">TELEFONO</th>
+                <th scope="col">REPR_COD </th>
+                <th scope="col">LIMITE_CREDITO</th>
+                <th scope="col">OBSERVACIONES</th>
             </tr>
         </thead>
         <tbody>
             {% for datos in resultados %}
             <tr>
-                <td scope="row">{{ datos.getProdNum() }}</td>
-                <td scope="row">{{ datos.getDescripcion() }}</td>
+                <td scope="row"> <a href="/pedidos/{{datos.getClienteCod()}}"> {{ datos.getClienteCod() }}</a></td>
+                <td scope="row">{{ datos.getNombre() }}</td>
+                <td scope="row">{{ datos.getDireccion() }}</td>
+                <td scope="row">{{ datos.getCiudad }}</td>
+                <td scope="row">{{ datos.getEstado() }}</td>
+                <td scope="row">{{ datos.getCodPostal() }}</td>
+                <td scope="row">{{ datos.getArea() }}</td>
+                <td scope="row">{{ datos.getTelefono() }}</td>
+                <td scope="row">{{ datos.getEmp().getEmpNo }}</td>
+                <td scope="row">{{ datos.getLimiteCredito() }}</td>
+                <td scope="row">{{ datos.getObservaciones() }}</td>
             </tr>
                 {% endfor %}
         </tbody>
     </table>
-
-    
-
 {% endblock %}
 
 {% block footer %}
